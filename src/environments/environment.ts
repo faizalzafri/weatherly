@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  apiKey: '',
+  apiUrl: 'http://api.openweathermap.org',
+  imgUrl: 'http://openweathermap.org',
 }
 
 /*
