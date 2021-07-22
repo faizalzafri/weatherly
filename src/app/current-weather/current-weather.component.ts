@@ -11,11 +11,20 @@ import { WeatherService } from '../shared/weather.service'
 export class CurrentWeatherComponent implements OnInit {
   current!: ICurrentWeather
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService) {
+    this.current = {
+      city: '',
+      country: '',
+      date: new Date().getDate(),
+      image: '',
+      temperature: 0,
+      description: '',
+    }
+  }
 
   ngOnInit(): void {
     this.weatherService
-      .getCurrentWeather('Bethesda', 'US')
+      .getCurrentWeather('Pune', 'IND')
       .subscribe((data) => (this.current = data))
   }
 }
